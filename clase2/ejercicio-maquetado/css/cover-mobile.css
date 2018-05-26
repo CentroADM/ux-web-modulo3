@@ -1,0 +1,51 @@
+#home-cover {
+  /* h55vh */
+  height: 65vh;
+}
+
+#home-cover img {
+  /* w100p */
+  width: 100%;
+  height: 100%;
+}
+
+
+#cover-background-mobile {
+  /* h70p */
+  display: block;
+  height: 70%;
+
+  /* background: url(http://unsplash.it/768/400);
+  background-size: cover; */
+
+}
+
+
+#cover-background-tablet {
+  display: none;
+}
+
+
+
+#home-cover .title-container {
+  /* h30p */
+  height: 30%;
+
+  display: flex;
+
+  /* jcc */
+  justify-content: center;
+
+  /* aic */
+  align-items: center;
+
+}
+
+
+#home-cover h1 {
+  /* 'rem' se refiere al font-size del elemento 'body' */
+  font-size: 4rem;
+
+  /* m0 */
+  margin: 0;
+}

@@ -1,0 +1,32 @@
+* {
+  outline: 1px solid #def;
+
+  /* bzbb */
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+/* RESETS */
+html, body {
+  /* m0 */
+  margin: 0;
+  /* p0 */
+  padding: 0;
+}
+
+ul, li {
+  /* m0 */
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+
+
+body {
+  /* fz16 */
+  font-size: 16px;
+}
