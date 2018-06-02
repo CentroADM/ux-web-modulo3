@@ -11,14 +11,10 @@
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/regular.css" integrity="sha384-EWu6DiBz01XlR6XGsVuabDMbDN6RT8cwNoY+3tIH+6pUCfaNldJYJQfQlbEIWLyA" crossorigin="anonymous">
-
-
-
   <style>
 
     * {
-      outline: 1px solid grey;
+      outline: 1px solid #eee;
     }
 
     html {
@@ -27,8 +23,8 @@
     }
 
     img {
-      max-width: 100%;
-      min-height: 6rem
+      width: 100%;
+      min-height: 5rem
     }
 
   </style>
@@ -37,11 +33,11 @@
 <body>
 
 
+  <main class="container">
 
-  <!-- section#entradas.container -->
-  <section id="entradas" class="container">
+    <!-- section#entradas.container -->
+    <section id="entradas" class="row">
 
-    <div class="row">
 
       <!-- article.entrada -->
       <article class="entrada col-12 col-md-6 col-lg-4">
@@ -59,7 +55,90 @@
           </div>
 
           <!-- .info-autor-fecha.row -->
-          <div class="info-autor-fecha row">
+          <div class="info-autor-fecha row align-items-center">
+            <!-- .autor.col-7 -->
+            <div class="autor col-7">
+              Publicado por:
+              <!-- a -->
+              <a href="#">
+                Nombre Autor
+              </a>
+            </div>
+
+            <!-- .fecha.col-5 -->
+            <div class="fecha col-5 text-right">
+              17 / 7 / 17
+            </div>
+
+          </div>
+
+
+        </header>
+
+        <!-- section.contenido-link.row -->
+        <section class="contenido-link row align-items-center">
+
+          <!-- section.contenido.col-7 -->
+          <section class="contenido col-7">
+            <!-- p -->
+            <p>
+              <!-- lorem10 -->
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, natus.
+            </p>
+          </section>
+
+          <!-- .link.col-5 -->
+          <div class="link col-5 text-center">
+            <!-- a.btn.btn-primary{Enlace} -->
+            <a href="" class="btn btn-primary">Enlace</a>
+          </div>
+
+        </section>
+
+        <!-- footer.row -->
+        <footer class="row">
+          <!-- a.col-4.btn.btn-primary>i.fa.fa-heart+div.text-center{Etiqueta} -->
+          <a href="#" class="col-4 btn btn-success">
+            <i class="fa fa-heart"></i>
+            <div class="text-center">
+              Etiqueta
+            </div>
+          </a>
+          <a href="#" class="col-4 btn btn-warning">
+            <i class="fa fa-heart"></i>
+            <div class="text-center">
+              Etiqueta
+            </div>
+          </a>
+          <a href="#" class="col-4 btn btn-danger">
+            <i class="fa fa-ambulance"></i>
+            <div class="text-center">
+              Etiqueta
+            </div>
+          </a>
+
+        </footer>
+
+      </article>
+
+
+      <!-- article.entrada -->
+      <article class="entrada col-12 col-md-6 col-lg-4">
+
+        <!-- .imagen[image-frame]>img[src=http://unsplash.it/400/300] -->
+        <div class="imagen" image-frame>
+          <img src="http://unsplash.it/400/300" alt="">
+        </div>
+
+        <header>
+
+          <!-- .titulo.row>h5>lorem8 -->
+          <div class="titulo row">
+            <h5 class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+          </div>
+
+          <!-- .info-autor-fecha.row -->
+          <div class="info-autor-fecha row align-items-center">
             <!-- .autor.col-7 -->
             <div class="autor col-7">
               Publicado por:
@@ -115,7 +194,7 @@
             </div>
           </a>
           <a href="#" class="col-4 btn btn-danger">
-            <i class="fa fa-heart"></i>
+            <i class="fa fa-ambulance"></i>
             <div class="text-center">
               Etiqueta
             </div>
@@ -125,9 +204,92 @@
 
       </article>
 
-    </div>
 
-  </section>
+      <!-- article.entrada -->
+      <article class="entrada col-12 col-md-6 col-lg-4">
+
+        <!-- .imagen[image-frame]>img[src=http://unsplash.it/400/300] -->
+        <div class="imagen" image-frame>
+          <img src="http://unsplash.it/400/300" alt="">
+        </div>
+
+        <header>
+
+          <!-- .titulo.row>h5>lorem8 -->
+          <div class="titulo row">
+            <h5 class="col">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h5>
+          </div>
+
+          <!-- .info-autor-fecha.row -->
+          <div class="info-autor-fecha row align-items-center">
+            <!-- .autor.col-7 -->
+            <div class="autor col-7">
+              Publicado por:
+              <!-- a -->
+              <a href="#">
+                Nombre Autor
+              </a>
+            </div>
+
+            <!-- .fecha.col-5 -->
+            <div class="fecha col-5 text-right">
+              17 / 7 / 17
+            </div>
+
+          </div>
+
+
+        </header>
+
+        <!-- section.contenido-link.row -->
+        <section class="contenido-link row align-items-center">
+
+          <!-- section.contenido.col-7 -->
+          <section class="contenido col-7">
+            <!-- p -->
+            <p>
+              <!-- lorem10 -->
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, natus.
+            </p>
+          </section>
+
+          <!-- .link.col-5 -->
+          <div class="link col-5 text-center align-items-center">
+            <!-- a.btn.btn-primary{Enlace} -->
+            <a href="" class="btn btn-primary">Enlace</a>
+          </div>
+
+        </section>
+
+        <!-- footer.row -->
+        <footer class="row">
+          <!-- a.col-4.btn.btn-primary>i.fa.fa-heart+div.text-center{Etiqueta} -->
+          <a href="#" class="col-4 btn btn-success">
+            <i class="fa fa-heart"></i>
+            <div class="text-center">
+              Etiqueta
+            </div>
+          </a>
+          <a href="#" class="col-4 btn btn-warning">
+            <i class="fa fa-heart"></i>
+            <div class="text-center">
+              Etiqueta
+            </div>
+          </a>
+          <a href="#" class="col-4 btn btn-danger">
+            <i class="fa fa-ambulance"></i>
+            <div class="text-center">
+              Etiqueta
+            </div>
+          </a>
+
+        </footer>
+
+      </article>
+
+    </section>
+
+  </main>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
