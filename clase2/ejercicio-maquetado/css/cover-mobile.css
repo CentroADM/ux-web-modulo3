@@ -13,7 +13,7 @@
 #cover-background-mobile {
   /* h70p */
   display: block;
-  height: 70%;
+  height: 60%;
 
   /* background: url(http://unsplash.it/768/400);
   background-size: cover; */
@@ -29,7 +29,7 @@
 
 #home-cover .title-container {
   /* h30p */
-  height: 30%;
+  height: 40%;
 
   display: flex;
 
@@ -46,6 +46,8 @@
   /* 'rem' se refiere al font-size del elemento 'body' */
   font-size: 4rem;
 
+  text-align: center;
+  
   /* m0 */
   margin: 0;
 }

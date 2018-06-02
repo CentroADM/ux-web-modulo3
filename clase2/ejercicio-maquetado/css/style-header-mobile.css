@@ -20,7 +20,7 @@
   /* w100p */
   width: 100%;
   /* h100p */
-  height: 48px;
+  /* height: 1  00%; */
 }
 
 
@@ -57,13 +57,14 @@
   width: 45%;
   height: 100%;
   float: left;
-  text-align: center;
 
   /* utilizamos flex para centrado vertical */
+
 
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
 
 }
 
@@ -78,14 +79,14 @@
 }
 
 .action-icon i {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 
 .action-icon span {
   /* mt2 */
-  margin-top: 4px;
-  font-size: 12px;
+  margin-top: .25rem;
+  font-size: .75rem;
 }
 
 
