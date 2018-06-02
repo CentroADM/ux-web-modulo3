@@ -16,6 +16,8 @@ html, body {
 }
 
 ul, li {
+  /* p0 */
+  padding: 0;
   /* m0 */
   margin: 0;
 }
@@ -29,4 +31,11 @@ li {
 html {
   /* fz16 */
   font-size: 16px;
+}
+
+
+
+#main-footer {
+  /* w100p */
+  width: 100%;
 }

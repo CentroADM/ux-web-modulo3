@@ -1,0 +1,26 @@
+
+
+
+.bullet {
+
+  /* w100p */
+  width: 100%;
+
+  /* p1rem */
+  padding: 1rem;
+
+  /* ta */
+  text-align: center;
+
+}
+
+
+.bullet .bullet-image {
+  height: 7rem;
+}
+
+
+.bullet-image img {
+  /* h100p */
+  height: 100%;
+}
