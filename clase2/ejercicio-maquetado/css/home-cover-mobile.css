@@ -43,11 +43,11 @@
 
 
 #home-cover h1 {
-  /* 'rem' se refiere al font-size del elemento 'body' */
-  font-size: 4rem;
+  /* 'rem' se refiere al font-size del elemento 'html' */
+  font-size: 3rem;
 
   text-align: center;
-  
+
   /* m0 */
   margin: 0;
 }
