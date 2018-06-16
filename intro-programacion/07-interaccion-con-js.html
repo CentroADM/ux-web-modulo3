@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+
+    html {
+      transition: background-color 1s;
+    }
+
+    #titulo {
+      transition: color 1s;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <h1 id="titulo">
+    Interacción con JS
+  </h1>
+
+  <button onclick="cambiarColorTitulo('red')">
+    Pintar título de rojo
+  </button>
+
+  <button onclick="cambiarColorTitulo('blue')">
+    Pintar título de azul
+  </button>
+
+  <button onclick="cambiarColorAzar()">
+    Cambiar color al azar!
+  </button>
+
+
+  <script>
+
+    function cambiarColorTitulo( nuevoColor ) {
+
+      // seleccionar el título del DOM
+      var titulo = document.getElementById('titulo')
+
+      titulo.style = 'color: ' + nuevoColor
+
+    }
+
+    function cambiarColorAzar() {
+      var colorAzar = inventarColor()
+      cambiarColorTitulo( colorAzar )
+
+      // seleccionar por tag nos arroja un arreglo:
+      // debemos seleccionar el primer elemento
+
+      var cuerpo = document.getElementsByTagName('html')
+      cuerpo = cuerpo[0]
+
+      cuerpo.style = 'background-color:' + inventarColor()
+    }
+
+    function inventarColor() {
+      var nuevoColor
+
+      nuevoColor = 'rgb('
+        nuevoColor += inventarComponenteRGB()
+        nuevoColor += ','
+        nuevoColor += inventarComponenteRGB()
+        nuevoColor += ','
+        nuevoColor += inventarComponenteRGB()
+      nuevoColor += ')'
+
+      return nuevoColor
+    }
+
+    function inventarComponenteRGB() {
+      return Math.floor( Math.random() * 256 )
+    }
+
+
+  </script>
+
+
+</body>
+</html>

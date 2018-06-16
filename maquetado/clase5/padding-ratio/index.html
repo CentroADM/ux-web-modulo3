@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+  <style>
+
+  .ratio-container {
+    display: inline-block;
+  }
+
+  .ratio-box {
+
+    width: 100px;
+    display: inline-block;
+    height: 0;
+    position: relative;
+    background-color: #ddd;
+
+  }
+
+  .content {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .ratio-square {
+    padding-top: 100%;
+  }
+
+  .ratio-16-9 {
+    padding-top: 56.25%;
+  }
+
+  .ratio-4-3 {
+    padding-top: 75%;
+  }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="ratio-container">
+
+    <div class="ratio-box ratio-square">
+
+      <div class="content">
+        Algo
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="ratio-container">
+
+    <div class="ratio-box ratio-16-9">
+
+      <div class="content">
+        Algo
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <div class="ratio-container">
+
+    <div class="ratio-box ratio-4-3">
+
+      <div class="content">
+        Algo
+      </div>
+
+    </div>
+
+  </div>
+
+</body>
+</html>

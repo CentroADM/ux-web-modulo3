@@ -130,7 +130,7 @@ a === b
 
 3 === 3 // true
 3 === "3" // false
-
+3 == "3" // true
 
 // distinto que
 
@@ -139,6 +139,14 @@ a != b
 3 != 4 // true
 
 4 != 4 // false
+
+
+// operador ternario
+
+condicion ? 'valor verdadero' : 'valor falso'
+
+puedeEntrar = comproSuBoleto ? 'sí' : 'no'
+
 
 
 
