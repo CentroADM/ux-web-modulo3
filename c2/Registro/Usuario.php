@@ -10,11 +10,14 @@ class Usuario{
     private $nombre;
     /*Contrasenia de el usuario*/
     private $contrasenia;
+    /*Correo de usuario*/
+    private $correo;
 
     /** Constructor de la clase Usuario*/
-    public function __construct(string $nombre, string $contrasenia){
+    public function __construct(string $nombre, string $contrasenia,string $correo){
         $this->nombre = $nombre;
         $this->contrasenia = $contrasenia;
+        $this->correo = $correo;
     }
 
     public function getNombre(){

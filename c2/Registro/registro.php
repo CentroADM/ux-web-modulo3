@@ -1,4 +1,4 @@
-<?php
+\<?php
 require_once('Usuario.php');
 require_once('BaseDeDatosUsuarios.php');
 
@@ -17,7 +17,7 @@ while($ciclo){
         $usuario = new Usuario($nombre,$contrasenia);
         $exito = $bdu->guarda($usuario);
         if($exito){
-            echo "Se guardo correctamente";
+            echo "Se guardo correctamente\n";
         }else {
             echo "algo fallo\n";
         }

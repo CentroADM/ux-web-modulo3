@@ -8,9 +8,11 @@ class BaseDeDatosUsuarios {
      * 'contrasenia': contraseña cifrada hash('sha256','contraseña'); 
      * 'registro': fecha obtendia con date("F j, Y, g:i a"); 
      */
-    private static $usuarios=[['nombre'=>'jhon'
+    public static $usuarios=[['nombre'=>'jhon'
         ,'contrasenia'=> '03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4'
-        ,'registro'=>'June 30, 2018, 9:04 am']
+        ,'registro'=>'June 30, 2018, 9:04 am',
+    'correo'=>'jhon@correocaliente.com']
+    
     ];
 
     public function __construct(){
@@ -24,7 +26,13 @@ class BaseDeDatosUsuarios {
      *               el mismo nombre. 
      */
     public function guarda(Usuario $u):bool{
-        return false;
+        $arreglo = ['nombre' => $u->getNombre(),
+                    'contrasenia'=>hash('sha256',$u->getConstrasenia),
+                    'registro'=>date("F j, Y, g:i a")];
+        
+        array_push(BaseDeDatosUsuarios::$usuarios,$arreglo);
+        return true;
+        
     }
 
     /* Actualiza la información del usuario
@@ -34,7 +42,15 @@ class BaseDeDatosUsuarios {
      *               lanza una excepción en caso de que no
      *              exista un usuario   
      */
-     public function actualiza(Usuario $u):bool{
+    public function actualiza(Usuario $u):bool{
+        foreach(BaseDeDatosUsuarios::$usuarios as &$usuario){
+            if($usuario['nombre'] === $u->getNombre()){
+                $usuario['correo'] = $u->getCorreo();
+                $usuario['contrasenia'] = $u->getContrasenia();
+                return true;
+            }
+        }
+        throw new Exception("No se encontro el usuario");
     }
 
     /* Borra al usuario del arreglo de los
@@ -45,6 +61,17 @@ class BaseDeDatosUsuarios {
      *              exista un usuario activo con esos datos.  
      */
     public function elimina(Usuario $u):bool{
+        $n = size_of(BaseDeDatosUsuarios::$usuarios);//tamanio
+        $i = 0;
+        while($i<$n){
+            $usuario = BaseDeDatosUsuarios::$usuarios[$i];
+            if($usuario['nombre']===$u->getNombre()){
+                unset(BaseDeDatosUsuarios::$usuarios[$i]);
+                return true;
+            }
+            $i++;
+            
+        }
         return false;
     }
 
@@ -65,7 +92,13 @@ class BaseDeDatosUsuarios {
      *              exista un usuario activo con esos datos.  
      */
     public function cambiaContrasenia(Usuario $u):bool{
-        return true;
+        foreach(BaseDeDatosUsuarios::$usuarios as &$usuario){
+            if($u->getNombre() === $usuario['nombre']){
+                $usuario['contrasenia']= $u->getConstrasenia();
+            }
+        }
+        unset($usuario);
+        throw new Exception("No se encontro el usuario");
     }
 
     /* Busca al usuario por su nombre
@@ -74,10 +107,22 @@ class BaseDeDatosUsuarios {
      *                  en caso de que no exsta el usuario con ese nombre. 
      */
     public function buscaUsuarioPorNombre(string $nombre):Usuario{
-        return null;
+        $n = size_of(BaseDeDatosUsuarios::$usuarios);//tamanio
+        for($i=0;$i<$n;$i++){
+           $usuario =  BaseDeDatosUsuarios::$usuarios[$i];
+           if($usuario['nombre'] === $nombre){
+               return new Usuario($usuario['nombre'],$usuario['contrasenia']);
+           } 
+        }
+        throw new Exception("No se encontre");
     }
 
 }
 
 //echo hash('sha256','1234');
 //echo date("F j, Y, g:i a");
+
+//echo var_dum( BaseDeDatosUsuarios::$usuarios);
+$var  = new BaseDeDatosUsuarios();
+$u = new Usuario("juan","qwerty");
+$var->guarda($u);
