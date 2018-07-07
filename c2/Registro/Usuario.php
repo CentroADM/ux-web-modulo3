@@ -28,8 +28,14 @@ class Usuario{
         return $this->contrasenia;
     }
 
-    public function toString(){
-        return "(Usuario: $this->nombre, Contrasenia: $this->contrasenia)\n";
+    public function getCorreo(){
+        return $this->correo;
+    }
+
+    
+
+    public function __toString(){
+        return "(Usuario: $this->nombre,\n Contrasenia: $this->contrasenia,\n$this->correo)\n";
         
     }
     

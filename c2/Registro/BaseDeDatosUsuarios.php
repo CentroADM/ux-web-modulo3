@@ -27,8 +27,9 @@ class BaseDeDatosUsuarios {
      */
     public function guarda(Usuario $u):bool{
         $arreglo = ['nombre' => $u->getNombre(),
-                    'contrasenia'=>hash('sha256',$u->getConstrasenia),
-                    'registro'=>date("F j, Y, g:i a")];
+                    'contrasenia'=>hash('sha256',$u->getContrasenia()),
+                    'registro'=>date("F j, Y, g:i a"),
+                    'correo'=>$u->getCorreo()];
         
         array_push(BaseDeDatosUsuarios::$usuarios,$arreglo);
         return true;
@@ -46,7 +47,8 @@ class BaseDeDatosUsuarios {
         foreach(BaseDeDatosUsuarios::$usuarios as &$usuario){
             if($usuario['nombre'] === $u->getNombre()){
                 $usuario['correo'] = $u->getCorreo();
-                $usuario['contrasenia'] = $u->getContrasenia();
+                $usuario['contrasenia'] = hash('sha256',$u->getContrasenia());
+                 unset($usuario);
                 return true;
             }
         }
@@ -61,7 +63,7 @@ class BaseDeDatosUsuarios {
      *              exista un usuario activo con esos datos.  
      */
     public function elimina(Usuario $u):bool{
-        $n = size_of(BaseDeDatosUsuarios::$usuarios);//tamanio
+        $n = sizeof(BaseDeDatosUsuarios::$usuarios);//tamanio
         $i = 0;
         while($i<$n){
             $usuario = BaseDeDatosUsuarios::$usuarios[$i];
@@ -80,7 +82,14 @@ class BaseDeDatosUsuarios {
      * @return array - contine objetos usuario 
      */
     public static function getUsuarios():array{
-        return [];
+        $arreglo =  [];
+        foreach(BaseDeDatosUsuarios::$usuarios as $u){
+            $nuevo = new Usuario($u['nombre'],
+                                 $u['contrasenia'],
+                                 $u['correo']);
+            array_push($arreglo,$nuevo);
+        }
+        return $arreglo;
     }
 
     /* Actualiza la contraseña del usuario en la propiedad del 
@@ -94,10 +103,12 @@ class BaseDeDatosUsuarios {
     public function cambiaContrasenia(Usuario $u):bool{
         foreach(BaseDeDatosUsuarios::$usuarios as &$usuario){
             if($u->getNombre() === $usuario['nombre']){
-                $usuario['contrasenia']= $u->getConstrasenia();
+                $usuario['contrasenia']= $u->getContrasenia();
+                unset($usuario);
+                return true;
             }
         }
-        unset($usuario);
+        
         throw new Exception("No se encontro el usuario");
     }
 
@@ -107,22 +118,37 @@ class BaseDeDatosUsuarios {
      *                  en caso de que no exsta el usuario con ese nombre. 
      */
     public function buscaUsuarioPorNombre(string $nombre):Usuario{
-        $n = size_of(BaseDeDatosUsuarios::$usuarios);//tamanio
+        $n = sizeof(BaseDeDatosUsuarios::$usuarios);//tamanio
         for($i=0;$i<$n;$i++){
            $usuario =  BaseDeDatosUsuarios::$usuarios[$i];
            if($usuario['nombre'] === $nombre){
-               return new Usuario($usuario['nombre'],$usuario['contrasenia']);
+               return new Usuario($usuario['nombre'],
+                                  $usuario['contrasenia'],
+                                  $usuario['correo']);
            } 
         }
-        throw new Exception("No se encontre");
+        throw new Exception("No lo encontre");
     }
 
 }
 
 //echo hash('sha256','1234');
 //echo date("F j, Y, g:i a");
+/*
+var_dump( BaseDeDatosUsuarios::$usuarios);
+$bd  = new BaseDeDatosUsuarios();
 
-//echo var_dum( BaseDeDatosUsuarios::$usuarios);
-$var  = new BaseDeDatosUsuarios();
-$u = new Usuario("juan","qwerty");
-$var->guarda($u);
+$u = new Usuario("juan","qwerty","juan@correocaliente.com");
+$bd->guarda($u);
+var_dump( BaseDeDatosUsuarios::$usuarios);
+$jhon = new Usuario('jhon','qwerty','jhon@hotmail.com');
+$bd->actualiza($jhon);
+var_dump( BaseDeDatosUsuarios::$usuarios);
+$a = $bd->getUsuarios();
+var_dump($a);
+$bd->elimina($u);
+var_dump( BaseDeDatosUsuarios::$usuarios);
+$us= $bd->buscaUsuarioPorNombre("jhon");
+$bd->cambiaContrasenia($us);
+//var_dump( BaseDeDatosUsuarios::$usuarios);
+*/
