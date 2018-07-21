@@ -1,0 +1,4 @@
+#agrupar{
+    width: 70%;
+    margin: 16px auto;
+}
