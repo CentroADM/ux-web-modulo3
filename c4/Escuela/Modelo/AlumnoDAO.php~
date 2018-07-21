@@ -1,0 +1,12 @@
+<?php
+
+class AlumnoDAO extends BaseDeDatos{
+
+    public function __construct(){
+        parent::construct('alumno');
+
+    }
+
+    
+
+}
