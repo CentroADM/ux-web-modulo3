@@ -17,10 +17,10 @@ body{
 }
 
 #agrupar{
-     width: 80%;
+    width: 80%;
     margin: 15px auto;
     text-align:left;
-
+    
 }
 
 
@@ -30,7 +30,7 @@ body{
     border: 1px solid #999999;
     background:#FFBB90;
     text-align:center;
-    
+     padding-top:5px;
 }
 
 #menu{
@@ -44,4 +44,21 @@ body{
     list-style:none;
     padding: 20px;
     font-size: 18px;
+}
+
+#seccion{
+    width:70%;
+    margin:20px 1% ;
+    float:left;
+    border: 1px solid #999999;
+
+}
+
+#columna{
+    float:left;
+    width:26%;
+    margin:20px 1%;
+    border: 1px solid #999999;
+    
+
 }
