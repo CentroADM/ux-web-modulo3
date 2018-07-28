@@ -1,0 +1,30 @@
+body{
+    background:-webkit-linear-gradient(left,#00FFFF ,#FFCC00 );
+    background:-moz-linear-gradient(left,#00FFFF ,#FFCC00 );
+}
+
+.contenedor{
+    width:70%;
+    height:300px;
+    background:rgb(150,150,150);
+    margin: 5% auto;
+    -webkit-box-shadow:rgb(0,100,0) 0px 0px 0px 5px; 
+}
+
+.ejemplo{
+    width:230px;
+    height:230px;
+    background:rgb(20,174,187);
+    position:absolute;
+    margin: 35px 20px;
+
+    -webkit-transition: all 5s ease-in .5s; 
+    -moz-transition: all 5s ease-in .5s;
+}
+
+.contenedor:hover .ejemplo{
+    border-radius: 50%;
+    background:rgb(20,20,20);
+    -webkit-transform: translate(300px);
+
+}
