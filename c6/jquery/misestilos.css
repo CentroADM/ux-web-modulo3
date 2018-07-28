@@ -1,0 +1,51 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+h1 {
+    font: bold 20px verdana, sans-serif;
+}
+h2 {
+    font: bold 14px verdana, sans-serif;
+}
+header, section, footer, aside, nav, article, figure, figcaption,
+hgroup{
+    display: block;
+}
+body {
+    text-align: center;
+}
+
+#principal{
+    width: 80%;
+    margin: 5% auto;
+    text-align: center;
+    border: 1px solid #999999;
+   
+}
+
+
+input {
+    width: 100%;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
